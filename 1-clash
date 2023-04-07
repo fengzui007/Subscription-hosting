@@ -109,6 +109,25 @@ proxy-groups:
       - "1"
       - "2"
 rules:
+  - DOMAIN-SUFFIX,m.mangabat.com,🚀 节点选择
+  - DOMAIN-SUFFIX,97mhw.com,🚀 节点选择
+  - DOMAIN-SUFFIX,ww4.mangafox.online,🚀 节点选择
+  - DOMAIN-SUFFIX,manganelo.com,🚀 节点选择
+  - DOMAIN-SUFFIX,mangaowl.net,🚀 节点选择
+  - DOMAIN-SUFFIX,x.twocomic.com,🚀 节点选择
+  - DOMAIN-SUFFIX,mangahasu.se,🚀 节点选择
+  - DOMAIN-SUFFIX,us-m.webtoons.com,🚀 节点选择
+  - DOMAIN-SUFFIX,90mh.com,🚀 节点选择
+  - DOMAIN-SUFFIX,m.x18mh.com,🚀 节点选择
+  - DOMAIN-SUFFIX,comicun.com,🚀 节点选择
+  - DOMAIN-SUFFIX,setnmh.com,🚀 节点选择
+  - DOMAIN-SUFFIX,migumh.com,🚀 节点选择
+  - DOMAIN-SUFFIX,magabao.com,🚀 节点选择
+  - DOMAIN-SUFFIX,cartoonmad.com,🚀 节点选择
+  - DOMAIN-SUFFIX,hahamh.net,🚀 节点选择
+  - DOMAIN-SUFFIX,muamh.com,🚀 节点选择
+  - DOMAIN-SUFFIX,comico.com.tw,🚀 节点选择
+  - DOMAIN-SUFFIX,x18mh.com,🚀 节点选择
   - DOMAIN-SUFFIX,xxxxx520.com,🚀 节点选择
   - DOMAIN-KEYWORD,jmcomic,🚀 节点选择
   - DOMAIN-KEYWORD,v2rayse.com,🚀 节点选择
