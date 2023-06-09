@@ -20,7 +20,7 @@ dns:
 proxies:
   - name: "1"
     type: hysteria
-    server: 141.147.159.185
+    server: 64.110.98.143
     port: 7829
     auth_str: 80a3ec
     alpn:
