@@ -152,3 +152,4 @@ rules:
   - MATCH,PROXY
   - DOMAIN-KEYWORD,nicotv,PROXY
   - DOMAIN-KEYWORD,akamaized,PROXY
+  - DOMAIN-KEYWORD,google,PROXY
