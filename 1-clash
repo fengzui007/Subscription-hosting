@@ -33,8 +33,8 @@ proxies:
   - name: "2"
     type: hysteria
     server: 138.2.59.26
-    port: 48607
-    auth_str: 25fe4f
+    port: 17915
+    auth_str: 4069c9
     alpn:
       - h3
     protocol: udp
