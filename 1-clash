@@ -20,7 +20,7 @@ dns:
 proxies:
   - name: "1"
     type: hysteria
-    server: 64.110.98.143
+    server: 2603:c023:4:8501:1111:1:11:1
     port: 47839
     auth_str: 5b8cfc
     alpn:
@@ -32,7 +32,7 @@ proxies:
     skip-cert-verify: true
   - name: "2"
     type: hysteria
-    server: 138.2.59.26
+    server: 2603:c023:4:8501:2:2:2:2222
     port: 17915
     auth_str: 4069c9
     alpn:
