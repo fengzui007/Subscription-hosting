@@ -137,7 +137,6 @@ rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
-  - DOMAIN,cn.bing.com,DIRECT
   - RULE-SET,private,DIRECT
   - RULE-SET,reject,REJECT
   - RULE-SET,icloud,DIRECT
@@ -151,7 +150,6 @@ rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
-  - DOMAIN-KEYWORD,nicotv,PROXY
   - DOMAIN-KEYWORD,akamaized,PROXY
   - DOMAIN-KEYWORD,google,PROXY
   - DOMAIN,jm-comic3.art,DIRECT
