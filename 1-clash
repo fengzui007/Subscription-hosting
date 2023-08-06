@@ -153,5 +153,4 @@ rules:
   - DOMAIN-KEYWORD,nicotv,PROXY
   - DOMAIN-KEYWORD,akamaized,PROXY
   - DOMAIN-KEYWORD,google,PROXY
-  - DOMAIN-KEYWORD,www.bing.com,PROXY
   - DOMAIN,jm-comic3.art,DIRECT
