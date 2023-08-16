@@ -32,9 +32,9 @@ proxies:
     skip-cert-verify: true
   - name: "2"
     type: hysteria
-    server: 2603:c023:4:8501:2:2:2:2222:22
+    server: 2603:c023:4:8501:2:2:2:2222
     port: 18576
-    auth_str: aa2845
+    auth_str: a664c3
     alpn:
       - h3
     protocol: udp
