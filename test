@@ -1,4 +1,4 @@
- port: 7890 # HTTP(S) 代理服务器端口
+port: 7890 # HTTP(S) 代理服务器端口
 # socks-port: 7891 # SOCKS5 代理端口
 mixed-port: 10801 # HTTP(S) 和 SOCKS 代理混合端口
 # redir-port: 7892 # 透明代理端口，用于 Linux 和 MacOS
@@ -610,13 +610,13 @@ proxies: # socks5
     auth_str: 5b8cfc # 将会在未来某个时候删除
     # auth-str: yourpassword
     # obfs: obfs_str
-     alpn:
+    alpn:
        - h3
     protocol: udp # 支持 udp/wechat-video/faketcp
     up: "60 Mbps" # 若不写单位，默认为 Mbps
     down: "300 Mbps" # 若不写单位，默认为 Mbps
-     sni: www.bing.com
-     skip-cert-verify: true
+    sni: www.bing.com
+    skip-cert-verify: true
   - name: "2hysteria"
     type: hysteria
     server: 2603:c023:4:8501:2:2:2:2222
@@ -625,7 +625,7 @@ proxies: # socks5
     auth_str: a664c3 # 将会在未来某个时候删除
     # auth-str: yourpassword
     # obfs: obfs_str
-     alpn:
+    alpn:
        - h3
     protocol: udp # 支持 udp/wechat-video/faketcp
     up: "60 Mbps" # 若不写单位，默认为 Mbps
