@@ -86,9 +86,9 @@ proxies:
     sni: www.bing.com
     skip-cert-verify: true
 
-Proxy-groups:
+proxy-groups:
   # 代理链，目前relay可以支持udp的只有vmess/vless/trojan/ss/ssr/tuic
-  # wireguard目前不支持在relay中使用，请使用Proxy中的dialer-Proxy配置项
+  # wireguard目前不支持在relay中使用，请使用proxy中的dialer-proxy配置项
   # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
   - name: "relay"
     type: relay
@@ -125,7 +125,7 @@ Proxy-groups:
   # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
 
   # select 用户自行选择节点
-  - name: "Proxy"
+  - name: "proxy"
     type: select
     # disable-udp: true
     proxies:
@@ -147,11 +147,11 @@ Proxy-groups:
     use:
       - provider1
     proxies:
-      - Proxy
+      - proxy
       - DIRECT
 
 # Clash 格式的节点或支持 *ray 的分享格式
-Proxy-providers:
+proxy-providers:
   provider1:
     type: http # http 的 path 可空置,默认储存路径为 homedir的proxies文件夹,文件名为url的md5
     url: "url"
@@ -184,8 +184,8 @@ rule-providers:
 rules:
   - RULE-SET,rule1,REJECT
   - DOMAIN-SUFFIX,baidu.com,DIRECT
-  - DOMAIN-KEYWORD,google,Proxy
-  - IP-CIDR,1.1.1.1/32,Proxy
+  - DOMAIN-KEYWORD,google,proxy
+  - IP-CIDR,1.1.1.1/32,proxy
   - IP-CIDR6,2409::/64,DIRECT
   # 当满足条件是 TCP 或 UDP 流量时，使用名为 sub-rule-name1 的规则集
   - SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),sub-rule-name1
@@ -208,11 +208,11 @@ rules:
 
 sub-rules:
   sub-rule-name1:
-    - DOMAIN,google.com,Proxy
+    - DOMAIN,google.com,proxy
     - DOMAIN,baidu.com,DIRECT
   sub-rule-name2:
     - IP-CIDR,1.1.1.1/32,REJECT
-    - IP-CIDR,8.8.8.8/32,Proxy
+    - IP-CIDR,8.8.8.8/32,proxy
     - DOMAIN,dns.alidns.com,REJECT
 
 # 流量入站
@@ -222,7 +222,7 @@ listeners:
     port: 10808
     #listen: 0.0.0.0 # 默认监听 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理
     # udp: false # 默认 true
 
   - name: http-in-1
@@ -230,14 +230,14 @@ listeners:
     port: 10809
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
 
   - name: mixed-in-1
     type: mixed #  HTTP(S) 和 SOCKS 代理混合
     port: 10810
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
     # udp: false # 默认 true
 
   - name: reidr-in-1
@@ -245,14 +245,14 @@ listeners:
     port: 10811
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
 
   - name: shadowsocks-in-1
     type: shadowsocks
     port: 10813
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
     password: vlmpIPSyHH6f4S8WVPdRIHIlzmB+GIRfoH3aNJ/t9Gg=
     cipher: 2022-blake3-aes-256-gcm
 
@@ -261,7 +261,7 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
     users:
       - username: 1
         uuid: 9d0cb9d0-964f-4ef6-897d-6c6b3ccf9e68
@@ -272,14 +272,14 @@ listeners:
     port: 10816
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
     network: [tcp, udp]
     target: target.com
 
   - name: tun-in-1
     type: tun
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
+    # proxy: proxy # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时，这里的proxy名称必须合法，否则会出错)
     stack: system # gvisor / lwip
     dns-hijack:
       - 0.0.0.0:53 # 需要劫持的 DNS
