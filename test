@@ -153,7 +153,7 @@ proxy-groups:
   # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
 
   # select 用户自行选择节点
-  - name: Proxy
+  - name: "Proxy"
     type: select
     # disable-udp: true
     proxies:
@@ -212,8 +212,8 @@ rule-providers:
 rules:
   - RULE-SET,rule1,REJECT
   - DOMAIN-SUFFIX,baidu.com,DIRECT
-  - DOMAIN-KEYWORD,google,PROXY
-  - IP-CIDR,1.1.1.1/32,PROXY
+  - DOMAIN-KEYWORD,google,Proxy
+  - IP-CIDR,1.1.1.1/32,Proxy
   - IP-CIDR6,2409::/64,DIRECT
   # 当满足条件是 TCP 或 UDP 流量时，使用名为 sub-rule-name1 的规则集
   - SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),sub-rule-name1
@@ -236,11 +236,11 @@ rules:
 
 sub-rules:
   sub-rule-name1:
-    - DOMAIN,google.com,PROXY
+    - DOMAIN,google.com,Proxy
     - DOMAIN,baidu.com,DIRECT
   sub-rule-name2:
     - IP-CIDR,1.1.1.1/32,REJECT
-    - IP-CIDR,8.8.8.8/32,PROXY
+    - IP-CIDR,8.8.8.8/32,Proxy
     - DOMAIN,dns.alidns.com,REJECT
 
 # 流量入站
