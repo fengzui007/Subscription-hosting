@@ -58,34 +58,6 @@ dns:
     - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true # 指定策略组和使用 HTTP/3
     - dhcp://en0 # dns from dhcp
     - quic://dns.adguard.com:784 # DNS over QUIC
-   
-  # 当配置 fallback 时，会查询 nameserver 中返回的 IP 是否为 CN，非必要配置
-  # 当不是 CN，则使用 fallback 中的 DNS 查询结果
-  # 确保配置 fallback 时能够正常查询
-  fallback:
-    - tcp://1.1.1.1
-    - 'tcp://1.1.1.1#ProxyGroupName' # 指定 DNS 过代理查询，ProxyGroupName 为策略组名或节点名，过代理配置优先于配置出口网卡，当找不到策略组或节点名则设置为出口网卡
-
-  # 专用于节点域名解析的 DNS 服务器，非必要配置项
-  # 配置服务器若查询失败将使用 nameserver，非并发查询
-  # Proxy-server-nameserver:
-  # - https://dns.google/dns-query
-  # - tls://one.one.one.one
-
-  # 配置 fallback 使用条件
-  fallback-filter:
-    geoip: true # 配置是否使用 geoip
-    geoip-code: CN # 当 nameserver 域名的 IP 查询 geoip 库为 CN 时，不使用 fallback 中的 DNS 查询结果
-  #   配置强制 fallback，优先于 IP 判断，具体分类自行查看 geosite 库
-  geosite:
-    - gfw
-  #   如果不匹配 ipcidr 则使用 nameservers 中的结果
-  ipcidr:
-    - 240.0.0.0/4
-  domain:
-    - '+.google.com'
-    - '+.facebook.com'
-    - '+.youtube.com'
 
 proxies:
   #hysteria
