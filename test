@@ -275,8 +275,8 @@ listeners:
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
     # Proxy: Proxy # 如果不为空则直接将该入站流量交由指定Proxy处理(当Proxy不为空时，这里的Proxy名称必须合法，否则会出错)
 
-  - name: tProxy-in-1
-    type: tProxy
+  - name: tproxy-in-1
+    type: tproxy
     port: 10812
     listen: 0.0.0.0
     # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
