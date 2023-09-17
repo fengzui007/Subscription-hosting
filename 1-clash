@@ -28,7 +28,7 @@ proxies:
     protocol: udp
     up: 60
     down: 300
-    sni: www.bing.com
+    sni: www.search.yahoo.com
     skip-cert-verify: true
   - name: "2"
     type: hysteria
@@ -40,7 +40,7 @@ proxies:
     protocol: udp
     up: 60
     down: 300
-    sni: www.bing.com
+    sni: www.search.yahoo.com
     skip-cert-verify: true
 proxy-groups:
   - name: "PROXY"
