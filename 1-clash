@@ -26,7 +26,6 @@ proxies:
     sni: www.bing.com
     skip-cert-verify: true
   - name: "2"
-    type: hysteria
     type: hysteria2
     server: 168.138.51.229
     port: 23905
