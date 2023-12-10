@@ -19,28 +19,19 @@ dns:
     - 223.5.5.5
 proxies:
   - name: "1"
-    type: hysteria
-    server: 2603:c023:4:8501:1111:1:11:1
-    port: 47839
-    auth_str: 5b8cfc
-    alpn:
-      - h3
-    protocol: udp
-    up: 60
-    down: 300
-    sni: www.search.yahoo.com
+    type: hysteria2
+    server: 64.110.98.143
+    port: 59198
+    password: 70ede3e6
+    sni: www.bing.com
     skip-cert-verify: true
   - name: "2"
     type: hysteria
-    server: 2603:c023:4:8501:2:2:2:2222
-    port: 18576
-    auth_str: a664c3
-    alpn:
-      - h3
-    protocol: udp
-    up: 60
-    down: 300
-    sni: www.search.yahoo.com
+    type: hysteria2
+    server: 168.138.51.229
+    port: 23905
+    password: 4e1909ea
+    sni: www.bing.com
     skip-cert-verify: true
 proxy-groups:
   - name: "PROXY"
